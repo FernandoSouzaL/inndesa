@@ -2,9 +2,17 @@
   line-height: 1.2;
   margin-bottom: .5em;
   margin-top: 0;
+
+  &--secondary {
+    font-family: $font-secondary;
+  }
   
-  &--primary {
-    font-family: $font-primary;
+  &--47 {
+    font-size: clamp(27px, 3vw, 47px);
+  }
+
+  &--37 {
+    font-size: clamp(20px, 5vw, 37px);
   }
 
   &--30 {
@@ -15,12 +23,28 @@
     font-size: clamp(18px, 3vw, 20px);
   }
 
+  &--25 {
+    font-size: clamp(20px, 3vw, 25px);
+  }
+
   &--18 {
     font-size: clamp(16px, 3vw, 18px);
   }
 
+  &--16 {
+    font-size: clamp(14px, 3vw, 16px);
+  }
+
+  &--14 {
+    font-size: clamp(14px, 3vw, 14px);
+  }
+
   &--white {
     color: $white;
+  }
+
+  &--color-primary {
+    color: $text-color;
   }
 
   &--center {
@@ -29,6 +53,73 @@
 
   &--txt {
     margin-top: .5em;
+  }
+
+  &--upper {
+    text-transform: uppercase;
+  }
+
+  &--spacing {
+    letter-spacing: 1px;
+  }
+
+  &--semibold {
+    font-weight: 600;
+  }
+
+  &--extrabold {
+    font-weight: 800;
+  }
+
+  &--title {
+    font-family: $font-primary;
+    font-size: clamp(20px, 5vw, 37px);
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: .75em;
+    letter-spacing: 1px;
+    font-weight: 800;
+
+    &::before {
+      content: url('../../library/images/ico-title.png');
+      margin-right: 15px;
+    }
+  }
+
+  &--title-secondary {
+    h2 {
+      font-family: $font-primary;
+      font-size: clamp(20px, 5vw, 37px);
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: .75em;
+      letter-spacing: 1px;
+      font-weight: 800;
+
+      &::before {
+        content: url('../../library/images/ico-title.png');
+        margin-right: 15px;
+      }
+    }
+  }
+
+  &--title-txt {
+    h2 {
+      font-family: $font-primary;
+      font-size: clamp(20px, 5vw, 37px);
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: .75em;
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
+  }
+
+  &--last {
+    &::after {
+      content: '.';
+      color: $color-secondary;
+    }
   }
 
 }

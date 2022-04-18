@@ -1,0 +1,10 @@
+.c-contact {
+  &__redes {
+    position: relative;
+    z-index: 3;
+
+    .c-menu__redes {
+      margin: 0;
+    }
+  }
+}

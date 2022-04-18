@@ -15,7 +15,13 @@ textarea {
   -webkit-font-smoothing: antialiased;
 }
 
+p,
+label {
+  font-family: $font-secondary;
+}
+
 body {
+  font-family: $font-primary;
   word-wrap: normal!important;
   -webkit-hyphens: none!important;
   -ms-hyphens: none!important;

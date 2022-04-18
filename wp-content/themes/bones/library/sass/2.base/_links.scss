@@ -1,9 +1,9 @@
 a {
-  color: $link-color;
+  color: $text-color;
   text-decoration: none;
   transition: $transition-default;
 
   &:hover {
-    color: $link-hover-color;
+    color: $text-color;
   }
 }

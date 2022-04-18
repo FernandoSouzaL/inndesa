@@ -79,7 +79,7 @@ $menus[] = $myMenu;
         ?>
 
     <li class="c-menu__item">
-        <a href="<?= $menu->url; ?>" class="o-ttl o-ttl--primary o-ttl--15 o-ttl--upper o-ttl--white <?= $current; ?> <?= $classNv1; ?>">
+        <a href="<?= $menu->url; ?>" class="o-ttl o-ttl--primary o-ttl--16 o-ttl--upper o-ttl--white o-ttl--spacing <?= $current; ?> <?= $classNv1; ?>">
             <?= $menu->titulo; ?> 
         </a>
             
@@ -97,7 +97,7 @@ $menus[] = $myMenu;
                     ?>
     
                     <li class="c-menu__item">
-                        <a href="<?= $submenu->url; ?>" class="o-ttl o-ttl--primary o-ttl--15 o-ttl--upper o-ttl--white o-ttl--center <?= $currentNv2; ?> <?= $classNv2; ?>">
+                        <a href="<?= $submenu->url; ?>" class="o-ttl o-ttl--primary o-ttl--16 o-ttl--upper o-ttl--white o-ttl--spacing o-ttl--center <?= $currentNv2; ?> <?= $classNv2; ?>">
                             <?= $submenu->titulo; ?> 
                         </a> 
                     </li>

@@ -63,6 +63,10 @@
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
@@ -76,10 +80,7 @@
 		
 						<p class="c-header__logo" class="h1" itemscope itemtype="http://schema.org/Organization">
 							<a href="<?php echo home_url(); ?>" rel="nofollow">
-								<svg width="184" height="63">
-									<title><?php bloginfo( 'name' ); ?></title>
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logotipo" />
-								</svg>
+								<img src="<?php echo get_template_directory_uri(); ?>/library/images/logotipo.png" alt="Inndesa incorporadora">
 							</a>
 						</p>
 		
@@ -91,28 +92,12 @@
 								<ul class="c-menu__main">
 									<?php echo get_template_part('partials/main-itens-menu'); ?>
 								</ul>
-								<ul class="c-menu__redes">
-									<?php echo get_template_part('partials/main-redes-menu'); ?>
-								</ul>
 							</div>
 
 							<div class="c-menu__hamburguer js-active-menu">
 								<span></span>
 							</div>
 
-							<div class="c-menu__lang">
-								<div class="c-menu__lang-btn js-lang">
-									<svg width="30" height="30">
-										<title>Pt-br</title>
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Pt-br" />
-									</svg> 
-								</div>
-
-								<ul class="c-menu__lang-container">
-									<?php echo get_template_part('partials/main-lang-menu'); ?>
-								</ul>
-							</div>
-							
 						</div>
 		
 					</div>

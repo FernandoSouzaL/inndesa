@@ -83,32 +83,138 @@ jQuery(document).ready(function ($) {
     });
   });
 
-  var swiper = new Swiper('.swiper-container', {
+  var swiper = new Swiper('.js-home-slider', {
     slidesPerView: 'auto',
     centeredSlides: true,
     paginationClickable: true,
-    //spaceBetween: 5000,
+    watchOverflow: true,
     autoplay: {
       delay: 8000,
     },
+    navigation: {
+      nextEl: ".js-home-slider .button-next",
+      prevEl: ".js-home-slider .button-prev",
+    },
     pagination: {
-      el: '.swiper-pagination',
+      el: '.js-home-slider .swiper-pagination',
       type: 'bullets',
       clickable: true,
     },
-    //loop: true,
-    // breakpoints: {
-    //     // when window width is <= 320px
-    //     1024: {
-    //       slidesPerView: 2,
-    //     },
-    //     // when window width is <= 480px
-    //     768: {
-    //       slidesPerView: 1,
-    //       spaceBetween: 20
-    //     }
-    //   }
   });
+
+  var swiper = new Swiper('.js-highlights-slider', {
+    slidesPerView: 3,
+    paginationClickable: true,
+    spaceBetween: 30,
+    watchOverflow: true,
+    pagination: {
+      el: '.js-highlights-slider .swiper-pagination',
+      type: 'progressbar',
+      clickable: true,
+    },
+    breakpoints: {
+      1023: {
+        slidesPerView: 2,
+      },
+      668: {
+        slidesPerView: 1,
+      }
+    }
+  });
+
+  var swiper = new Swiper('.js-localization-slider', {
+    slidesPerView: 3,
+    paginationClickable: true,
+    spaceBetween: 20,
+    watchOverflow: true,
+    pagination: {
+      el: '.js-localization-slider .swiper-pagination',
+      type: 'progressbar',
+      clickable: true,
+    },
+    breakpoints: {
+      668: {
+        slidesPerView: 2,
+      },
+      424: {
+        slidesPerView: 1,
+      }
+    }
+  });
+
+  var mySwiper = new Swiper ('.js-gallery-slider', {
+    initialSlide: 0,
+    effect: 'slide',
+    spaceBetween: 30,
+    slidesPerView: 2,
+    centeredSlides: true,
+    slidesOffsetBefore: 0,
+    grabCursor: true,
+    autoHeight: false,
+    direction: 'horizontal',
+    loop: true,
+    autoplayStopOnLast: false,
+    pagination: {
+      el: '.js-gallery-slider .swiper-pagination',
+      type: 'progressbar',
+      clickable: true,
+    },    
+  });
+  
+  var mySwiper = new Swiper ('.js-plants-slider', {
+    initialSlide: 0,
+    effect: 'slide',
+    spaceBetween: 30,
+    slidesPerView: 2,
+    centeredSlides: true,
+    slidesOffsetBefore: 0,
+    grabCursor: true,
+    autoHeight: false,
+    direction: 'horizontal',
+    loop: true,
+    autoplayStopOnLast: false,
+    pagination: {
+      el: '.js-plants-slider .swiper-pagination',
+      type: 'progressbar',
+      clickable: true,
+    },    
+  });
+
+  $('.js-current-enterprises').on('click', function(e) {
+    e.preventDefault();
+    $this = $(this);
+    $id = $this.attr('href');
+
+    $('.js-current-enterprises, .c-single-enterprises__slide').removeClass('is-active');
+    $($id).addClass('is-active');
+    $this.addClass('is-active');
+  });
+
+  $('.js-differentials-current').on('click', function(e) {
+    e.preventDefault();
+    $this = $(this);
+    $id = $this.attr('href');
+
+    $('.js-differentials-current, .c-differentials__container').removeClass('is-active');
+    $($id).addClass('is-active');
+    $this.addClass('is-active');
+  });
+
+  if($('.c-certifications')) {
+    $('#js-current-1').addClass('is-active');
+    $('.c-certifications__block:first-child a').addClass('is-active');
+    
+    $('.js-certifications-current').on('click', function(e) {
+      e.preventDefault();
+      $this = $(this);
+      $id = $this.attr('href');
+  
+      $('.js-certifications-current, .c-certifications__description').removeClass('is-active');
+      $($id).addClass('is-active');
+      $this.addClass('is-active');
+    })
+  }
+
 
   // Menu mobile
   $('.js-active-menu').on('click', function() {
@@ -266,14 +372,14 @@ jQuery(document).ready(function ($) {
   // end.
 
   // MASKED INPUT
-  /*$(function($){
+  $(function($){
       $(".data").mask("99/99/9999");
       $(".cpf").mask("999.999.999-99");
       $(".cep").mask("99999-999");
       $(".cnpj").mask("99.999.999/9999-99")
   });
   $(function($){
-    $('.telefone').focusout(function(){
+    $('.js-telphone').focusout(function(){
       var phone, element;
       element = $(this);
       element.unmask();
@@ -284,7 +390,7 @@ jQuery(document).ready(function ($) {
         element.mask("(99) 9999-9999?9");
       }
     }).trigger('focusout');
-  });*/
+  });
   // end.
 
   loadGravatars();

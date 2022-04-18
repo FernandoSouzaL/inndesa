@@ -1,7 +1,8 @@
 .c-header {
-  background-color: $black;
+  background-color: $color-primary;
   position: sticky;
   top: 0;
+  z-index: 9999;
   transition: $transition-default;
 
   &__container {
@@ -11,30 +12,42 @@
   }
 
   &__logo {
-    margin: .75em 0;
-    
+    margin: 1.5em 0;
+    transition: $transition-default;
+
     a {
       display: inline-block;
     }
     
-    svg {
+    img {
       transition: $transition-default;
+
+      @media (max-width: $xs-max) {
+        width: 260px;
+      }
     }
   }
 
   &.is-active {
     .c-header__logo {
-      svg {
-        width: 140px;
-        height: 48px;
+      margin: 1em 0;
+
+      img {
+        width: 190px;
+        height: auto;
+        transition: $transition-default;
       }
     }
 
     .c-menu__main {
       & > .c-menu__item {
         & > a {
-          padding: 20px 0;
+          padding: 23px 0;
         }
+      }
+
+      .c-menu__sub {
+        top: 46px;
       }
     }
   }

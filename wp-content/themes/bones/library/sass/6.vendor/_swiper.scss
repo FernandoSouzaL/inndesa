@@ -24,34 +24,121 @@
   transition-property: transform;
 }
 
-.swiper-buttons {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 1em;
-}
-
 .swiper-button {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  margin: 0 5px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #EEE;
-  color: $color-secondary;
-  transition: $transition-default;
-
-  &:hover {
-    background: $link-hover-color;
-    color: $white;
-  }
-
   &-disabled {
     opacity: .35;
     pointer-events: none;
+  }
+
+  &-lock {
+    display: none !important;
+  }
+}
+
+.button-next,
+.button-prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 51px;
+  height: 121px;
+  background: $color-secondary;
+  color: $white;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 9;
+  cursor: pointer;
+  transition: $transition-default;
+
+  @media (max-width: $sm) {
+    width: 35px;
+    height: 80px;
+  }
+
+  @media (max-width: $xs-max) {
+    display: none;
+  }
+
+  &:hover {
+    background: $color-primary;
+  }
+}
+
+.button-next {
+  right: 0;
+
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+.button-prev {
+  left: 0;
+}
+
+.swiper__container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2em, 4vw, 3em);
+  margin-bottom: 1em;
+}
+
+.swiper-pagination {
+
+  &-mobile {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+
+    .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin: 0 3px;
+      background: $white;
+      transition: $transition-default;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: $color-secondary;
+    }
+
+    @media (min-width: $sm) {
+      display: none;
+    }
+  }
+
+  &-progressbar {
+    background: rgba($medium-gray, .6);
+    position: absolute;
+    height: 1px;
+    text-align: center;
+    transition: .3s opacity;
+    transform: translate3d(0,0,0);
+    width: 320px;
+
+    &-fill {
+      background: #444444;
+      position: absolute;
+      left: 0;
+      top: -1px;
+      width: 100%;
+      height: 3px;
+      transform: scale(0);
+      transform-origin: left top;
+    }
+  }
+
+  &-lock {
+    display: none;
   }
 }

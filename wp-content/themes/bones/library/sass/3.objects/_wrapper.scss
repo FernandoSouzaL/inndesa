@@ -2,7 +2,24 @@
   margin: 0 auto;
   padding: 0 3%;
 
+  &--1380 {
+    max-width: 1380px;
+    box-sizing: border-box;
+
+    &-secondary {
+      box-sizing: content-box;
+    }
+  }
+
   &--1280 {
     max-width: 1280px;
+  }
+
+  &--1130 {
+    max-width: 1130px;
+  }
+
+  &--858 {
+    max-width: 858px;
   }
 }

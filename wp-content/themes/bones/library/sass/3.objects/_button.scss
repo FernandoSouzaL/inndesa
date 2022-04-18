@@ -27,12 +27,21 @@
     background: $color-secondary;
     height: 50px;
     padding: 0;
-    border-radius: 25px;
     font-weight: bold;
     color: $white;
+    font-size: 16px;
+    font-family: $font-primary;
+    font-weight: bold;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: $transition-default;
     
     &:hover {
-      background-color: $link-hover-color;
+      background-color: $color-primary;
     }
 
     &:disabled:hover {

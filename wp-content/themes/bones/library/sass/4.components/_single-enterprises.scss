@@ -1,0 +1,166 @@
+.c-single-enterprises {
+  &__top {
+    position: relative;
+    z-index: 9;
+    transform: translateY(-19%);
+
+    @media (max-width: $md) {
+      transform: translateY(0);
+      padding-bottom: clamp(2em, 5vw, 4em);
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    z-index: 9;
+    left: 14.04%;
+    bottom: 120px;
+
+    @media (max-width: $md) {
+      left: 3%;
+      bottom: 25px;
+    }
+
+    @media (max-width: $sm) {
+      width: 250px;
+    }
+  }
+
+  &__status {
+    margin-bottom: 1.5em;
+  }
+
+  &__description {
+    margin-bottom: 2em;
+  }
+
+  &__localization {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $sm) {
+      flex-direction: column;
+    }
+
+    h2 {
+      padding-right: 23%;
+      width: 420px;
+      max-width: 100%;
+
+      @media(max-width: $md) {
+        padding-right: 11%;
+        width: 555px;
+      }
+
+      @media (max-width: $sm) {
+        padding-right: 0;
+        width: 100%;
+      }
+    }
+
+    .swiper-container {
+      width: 695px !important;
+      max-width: 100% !important;
+    }
+  }
+
+  &__container {
+    display: flex;
+
+    @media (max-width: $md) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    width: 55%;
+
+    @media (max-width: 425px) {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__bg {
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px 40px;
+    width: 643px;
+    max-width: 100%;
+    margin-bottom: clamp(2em, 5vw, 4em);
+    margin-top: clamp(2em, 5vw, 4em);
+
+    @media (max-width: 424px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__content {
+    width: 643px;
+    max-width: 100%;
+  }
+
+  &__container-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    align-items: flex-end;
+    margin-bottom: clamp(2em, 5vw, 4em);
+
+    @media (max-width: $sm) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-left: auto;
+
+    &-item {
+      margin: 0 1em;
+
+      a {
+        font-family: $font-primary;
+        font-weight: 500;
+        font-size: clamp(20px, 5vw, 25px);
+        line-height: 1.2;
+        color: #DDD;
+
+        &.is-active {
+          color: $text-color;
+        }
+
+        &:hover {
+          color: $text-color !important;
+        }
+      }
+    }
+  }
+
+  &__slide {
+    width: 100%;
+    transform: translateX(-100%);
+    height: 0;
+    overflow: hidden;
+
+    &.is-active {
+      transform: translateX(0);
+      overflow: visible;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.c-differentials {
+  &__content {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__menu {
+    display: flex;
+    margin-bottom: clamp(2em, 5vw, 4em);
+    list-style: none;
+
+    &-item {
+      margin: 0 1.5em;
+
+      a {
+        font-family: $font-primary;
+        font-size: clamp(25px, 5vw, 37px);
+        font-weight: 800;
+        color: #DDD;
+        line-height: 1.2;
+
+        &:hover {
+          color: $text-color !important;
+        }
+
+        &.is-active {
+          color: $text-color;
+        }
+      }
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    transform: translateX(-100%);
+    transition: $transition-default;
+
+    @media (max-width: $md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $xs-max) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &.is-active {
+      height: auto;
+      width: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  &__block {
+    display: flex;
+
+    @media (max-width: $xs-max) {
+      margin: auto;
+    }
+
+  }
+
+  &__ico {
+    margin-right: 15px;
+  }
+}

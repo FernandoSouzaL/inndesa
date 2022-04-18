@@ -3,18 +3,60 @@
       margin: 0;
   }
 
-  label a {
-      color: $color-primary;
+  .wpcf7-list-item-label {
+    position: relative;
+    display: block;
+    line-height: 1.4;
+    padding-left: 25px;
+    font-family: $font-secondary;
+    font-size: 15px;
+    color: $white;
+
+    &::after, 
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &::before {
+      top: 2px;
+      left: 0;
+      height: 14px;
+      width: 14px;
+      border: 1px solid $color-secondary;
+    }
+
+    &::after {
+      top: 6px;
+      left: 4px;
+      width: 8px;
+      height: 8px;
+      background-color: $color-secondary;
+      opacity: 0;
+      transition: $transition-default;
+    }
+  }
+
+  .o-input--accept:checked + .wpcf7-list-item-label::after {
+    opacity: 1;
+  }
+
+  label {
+
+    a {
+      color: $white;
       text-decoration: underline;
 
       &:hover {
           color: $link-hover-color;
       }
+    }
   }
 }
 
 .wpcf7-spinner {
-  background-color: $white !important;
+  background-color: transparent !important;
   margin: 1em auto;
   display: flex;
 
@@ -32,5 +74,6 @@
     transform-origin: unset !important;
   }
 }
+
   
 

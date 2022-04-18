@@ -1,0 +1,17 @@
+.c-background {
+  width: 100%;
+  padding-top: clamp(2em, 5vw, 4em);
+  padding-bottom: clamp(2em, 5vw, 4em);
+
+  &--secondary {
+    padding-bottom: 0;
+  }
+
+  &--white {
+    background: $white;
+  }
+
+  &--gray {
+    background: $gray;
+  }
+}
